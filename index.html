@@ -1,0 +1,102 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Proyecto 1.1.- Bastionado de BIOS/UEFI</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="Proyecto1.1"
+                  title="Proyecto 1.1.- Bastionado de BIOS/UEFI"
+                  environment="web"
+                  feedback-link="https://github.com/rafatocinoo/rafatocinoo.github.io/issues/1">
+    
+      <google-codelab-step label="Introducción" duration="5">
+        <p>La BIOS (Sistema Básico de Entrada/Salida) o UEFI (Interfaz de Firmware Extensible Unificada) es una capa fundamental en la arquitectura de cualquier dispositivo informático, controlando el arranque del sistema y la interacción inicial con el hardware. Bastionar (o proteger) la BIOS/UEFI es esencial para reforzar la seguridad del sistema, ya que esta etapa inicial puede ser un punto vulnerable si no se gestiona adecuadamente.</p>
+<p>Esta guía proporcionará un enfoque práctico para fortalecer la seguridad de los dispositivos desde su arranque, mitigando riesgos potenciales de acceso no autorizado y ciberataques sofisticados que podrían comprometer el sistema desde su inicio.</p>
+<p>Acceder a la BIOS/UEFI</p>
+<p>En esta guía deberemos acceder a la BIOS/UEFI de nuestro disposiutivo para ello reinicia el equipo. Durante el inicio del sistema, presiona la tecla específica que permite ingresar a la BIOS/UEFI. Las teclas más comunes son F2, Delete, F10 o Esc, aunque varía según el fabricante.</p>
+<p>Negative : Nota: Consulta el manual de tu placa base o fabricante para confirmar la tecla correcta.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseña de arranque" duration="5">
+        <p>En este primer paso se activará la opción de arranque seguro, esta solicitará una contraseña para poder arrancar el equipo.</p>
+<p>Para ello en primer lugar deberemos acceder a la BIOS/UEFI como hemos explicado anteriormente.</p>
+<p>Una vez dentro de la BIOS/UEFI, utiliza las teclas de dirección o el ratón (en el caso de interfaces UEFI) para navegar al menú de seguridad o la sección de configuración avanzada. Busca opciones como &#34;Security&#34;, &#34;Security Settings&#34; o &#34;Passwords&#34;.</p>
+<p class="image-container"><img alt="Arranque seguro" src="img\\6aec78e9a180d60.png"></p>
+<p>Ingresa la contraseña deseada y confírmala cuando se te pida. Se recomienda usar una contraseña que combine letras mayúsculas, minúsculas, números y símbolos para mayor seguridad.</p>
+<p>Una vez configurada la contraseña, busca la opción &#34;Save &amp; Exit&#34; o &#34;Save Changes and Exit&#34; para guardar los cambios. Confirma que deseas guardar los cambios cuando se te solicite y permite que el sistema se reinicie.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseña de administrador" duration="5">
+        <p>Configurar una contraseña de administración (o contraseña de supervisor) en la BIOS/UEFI es un paso importante para proteger el acceso a la configuración del firmware y evitar cambios no autorizados en la configuración del sistema.</p>
+<p>En este paso nos mantendremos en el menú de seguridad selecciona la opción de &#34;Set Supervisor Password&#34;.</p>
+<p class="image-container"><img alt="Contraseña de admin" src="img\\6d8f001f4da0b869.png"></p>
+<p>Ingresa la contraseña que deseas usar. Para mejorar la seguridad, crea una contraseña robusta que combine mayúsculas, minúsculas, números y símbolos.</p>
+<p>Confirma la contraseña ingresándola una segunda vez cuando se te pida.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Arranques externos y orden de arranque" duration="0">
+        <p>Evitar el arranque desde dispositivos externos es un método efectivo para proteger tu sistema contra accesos no autorizados y posibles amenazas de malware que pueden ejecutarse desde medios como USBs o discos externos. Aquí tienes cómo hacerlo correctamente.</p>
+<p>En este paso deberemos movernos al menú de configuración de arranque, startup o Boot. Este menú suele contener una lista de dispositivos desde los cuales se puede iniciar el sistema, como discos duros, unidades USB y discos ópticos.</p>
+<p class="image-container"><img alt="Menú startup" src="img\\223d2ab9a242d07e.png"></p>
+<p>Identifica las opciones de arranque y asegúrate de que el disco duro o la unidad de almacenamiento principal (por ejemplo, un SSD o HDD) sea la primera opción de arranque. Mueve las opciones de dispositivos externos, como USB o CD/DVD, al final de la lista de prioridades o deshabilítalas completamente.</p>
+<p class="image-container"><img alt="Menu boot de prioridad" src="img\\cec1f22d3ee83843.png"></p>
+<p>Si es posible, busca una opción para deshabilitar directamente el arranque desde unidades externas. Esto puede aparecer en forma de opciones como &#34;Boot from USB&#34; o &#34;External Device Boot&#34;, que puedes desactivar.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Otras opciones de seguridad" duration="0">
+        <p>Configurar opciones de seguridad adicionales en un sistema BIOS/UEFI es esencial para proteger tu computadora contra accesos no autorizados y ataques maliciosos. A continuación, se presentan varias configuraciones de seguridad que puedes habilitar para fortalecer la protección de tu sistema.</p>
+<ol type="1">
+<li>Smart USB Protection</li>
+</ol>
+<p>Esta opción en el menú de seguridad nos permite elegir entre 2 opciones lo que se podrá realizar cuando se conecte un USB al dispositivo.</p>
+<ul>
+<li>Modo de solo lectura: el usuario puede copiar datos del dispositivo de almacenamiento USB a la computadora, pero no puede copiar datos desde la computadora al dispositivo de almacenamiento USB.</li>
+<li>Modo sin acceso: el usuario no puede utilizar el dispositivo de almacenamiento USB en Windows.</li>
+</ul>
+<p class="image-container"><img alt="Menu boot de prioridad" src="img\\c0c89649c7881007.png"></p>
+<ol type="1" start="2">
+<li>Encriptar discos duros</li>
+</ol>
+<p>Establecer una contraseña para acceder a los discos puede ser útil ya que si desconectan los discos y estos no tienen seguridad podrían acceder a la información sin ningún problema.</p>
+<p>Para ello en el menú de seguridad busacaremos una opción que nos permita establecer una contraseña a los discos.</p>
+<p class="image-container"><img alt="Menu boot de prioridad" src="img\\7ba66efd5e7c39a1.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

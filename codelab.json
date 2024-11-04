@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-11-03T16:26:31+01:00",
+  "id": "Proyecto1.1",
+  "duration": 15,
+  "title": "Proyecto 1.1.- Bastionado de BIOS/UEFI",
+  "summary": "Tutorial BIOS/UEFI",
+  "source": "codelab.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/rafatocinoo/rafatocinoo.github.io/issues/1",
+  "url": "Proyecto1.1"
+}
